@@ -1,4 +1,5 @@
 'use strict'
+const path = require('path')
 const fs = require('fs')
 const colors = require('colors')
 const util = require('util')
@@ -6,11 +7,14 @@ const http = require('http')
 const bodyParser = require('body-parser')
 
 function start(port, app) { 
-    const payeesFilePath = '../data/payees/payees.json'
+    let dataFolder = 'data'
+    let payeesFolder = 'payees'
+    let payeesJsonFile = 'payees.json'
+    let payeesFilePath = path.join(__dirname, '..', dataFolder, payeesFolder, payeesJsonFile)
 
     app.use(bodyParser.json())
     app.use(bodyParser.urlencoded({ extended: true }))
-    
+
     // GET, return a list of payee loaded from json file defined in payeesFilePath
     app.get('/payees', (req, res) => {
         util.log(util.format("Handling %s %s", req.method, req.url))
