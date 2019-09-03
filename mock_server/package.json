@@ -3,6 +3,9 @@
     "version": "0.0.1",
     "description": "Mocker services for Ancient Feature Hackathon",
     "private": true,
+    "scripts": {
+        "start": "node ./services/af-services.js"
+    },
     "repository": {
         "type": "git"
     },
