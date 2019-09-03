@@ -9,13 +9,29 @@ const bodyParser = require('body-parser')
 function start(port, app) { 
     let dataFolder = 'data'
     let payeesFolder = 'payees'
-    let payeesJsonFile = 'payees.json'
-    let payeesFilePath = path.join(__dirname, '..', dataFolder, payeesFolder, payeesJsonFile)
-
+    let consentFolder = 'consent'
+    let payeesJSONFile = 'payees.json'
+    let consentJSONFile = 'consent.json'
+    let payeesFilePath = path.join(__dirname, '..', dataFolder, payeesFolder, payeesJSONFile)
+    let consentFilePath = path.join(__dirname, '..', dataFolder, consentFolder, consentJSONFile)
+    
     app.use(bodyParser.json())
     app.use(bodyParser.urlencoded({ extended: true }))
 
-    // GET, return a list of payee loaded from json file defined in payeesFilePath
+    // Consent GET
+    app.get('/consent', (req, res) => {
+        util.log(util.format("Handling %s %s", req.method, req.url))
+        readJSONFile(consentFilePath, (error, consent) => {
+            if (error) {
+                res.sendStatus(404).json({ "status": 404, "description": "Failed to load consent."})
+                return
+            }
+            res.setHeader('Content-Type', 'application/json')
+            res.status(200).json(consent)
+        })
+    })
+
+    // Payee GET, return a list of payee loaded from json file defined in payeesFilePath
     app.get('/payees', (req, res) => {
         util.log(util.format("Handling %s %s", req.method, req.url))
         readJSONFile(payeesFilePath, (error, payees) => {
@@ -28,7 +44,7 @@ function start(port, app) {
         })
     })
 
-    // POST, overwrite the json file defined in payeesFilePath with the request body. (Note: Not validation)
+    // Payee POST, overwrite the json file defined in payeesFilePath with the request body. (Note: Not validation)
     app.post('/payees', (req, res) => {
         util.log(util.format("Handling %s %s", req.method, req.url))
         util.log(req.body)
