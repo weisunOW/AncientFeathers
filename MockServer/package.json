@@ -1,0 +1,21 @@
+{
+    "name": "af_mock_server",
+    "version": "0.0.1",
+    "description": "Mocker services for Ancient Feature Hackathon",
+    "private": true,
+    "repository": {
+        "type": "git"
+    },
+    "author": {
+        "name": "Wei Sun",
+        "email": "wei.sun3@anz.com"
+    },
+    "dependencies": {
+        "body-parser": "^1.19.0",
+        "express": "^4.17.1",
+        "uuid": "^3.3.3"
+    },
+    "engines": {
+        "node": ">=12.9.1"
+    }
+}
