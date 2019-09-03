@@ -1,1 +1,69 @@
-{"TransferPayees":[{"payeeId":"12345678912","description":"Telstra","branchId":"987654","accountNumber":"123456789","name":"Telstra Pty Ltd","RelatedLinks":[{"uriID":"TransferPayeeById","uri":"/preference/payment/transfer/transfer-payees/12345678912"}]}]}
+{
+    "TransferPayees": [
+      {
+        "payeeId": "12345678912",
+        "description": "Telstra",
+        "branchId": "987654",
+        "accountNumber": "123456789",
+        "name": "Telstra Pty Ltd",
+        "RelatedLinks": [
+          {
+            "uriID": "TransferPayeeById",
+            "uri": "/preference/payment/transfer/transfer-payees/12345678912"
+          }
+        ]
+      },
+      {
+        "payeeId": "123456789",
+        "description": "ACME Credit Cards Pty Ltd",
+        "branchId": "987654",
+        "accountNumber": "529298274",
+        "name": "ACME Credit Cards Pty Ltd",
+        "RelatedLinks": [
+          {
+            "uriID": "TransferPayeeById",
+            "uri": "/preference/payment/transfer/transfer-payees/234567891234"
+          }
+        ]
+      },
+      {
+        "payeeId": "234567891234",
+        "description": "Pipeys Plumbing",
+        "branchId": "123456",
+        "accountNumber": "543216987",
+        "name": "Pipeys Plumbing",
+        "RelatedLinks": [
+          {
+            "uriID": "TransferPayeeById",
+            "uri": "/preference/payment/transfer/transfer-payees/123456789"
+          }
+        ]
+      },
+      {
+        "payeeId": "988854321",
+        "description": "Elsa Jones",
+        "branchId": "654321",
+        "accountNumber": "482123872",
+        "name": "Elsa Jones",
+        "RelatedLinks": [
+          {
+            "uriID": "TransferPayeeById",
+            "uri": "/preference/payment/transfer/transfer-payees/987654321"
+          }
+        ]
+      },
+      {
+        "payeeId": "987654321",
+        "description": "Elsa Davis",
+        "branchId": "123456",
+        "accountNumber": "482983872",
+        "name": "Elsa Davis",
+        "RelatedLinks": [
+          {
+            "uriID": "TransferPayeeById",
+            "uri": "/preference/payment/transfer/transfer-payees/987654321"
+          }
+        ]
+      }
+    ]
+  }
