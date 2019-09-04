@@ -60,7 +60,7 @@ function start(port, app) {
                         return
                     }
                     
-                    res.sendStatus(200)
+                    res.status(200).json({ "status": "success" })
                 })
             } else {
                 res.status(400).json({ "status": 404, "description": "Failed to load bank consent with id ${id}" })
