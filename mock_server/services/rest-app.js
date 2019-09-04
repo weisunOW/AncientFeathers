@@ -5,6 +5,7 @@ const colors = require('colors')
 const util = require('util')
 const http = require('http')
 const bodyParser = require('body-parser')
+const supportedContentType = [ 'application/json', 'application/vnd.mcp-anz.com+json;version=1.0' ]
 
 function start(port, app) { 
     let dataFolder = 'data'
@@ -14,8 +15,8 @@ function start(port, app) {
     let consentJSONFile = 'consent.json'
     let payeesFilePath = path.join(__dirname, '..', dataFolder, payeesFolder, payeesJSONFile)
     let consentFilePath = path.join(__dirname, '..', dataFolder, consentFolder, consentJSONFile)
-    
-    app.use(bodyParser.json())
+
+    app.use(bodyParser.json({ type: (req) => supportedContentType.includes(req.get('Content-Type')) }))
     app.use(bodyParser.urlencoded({ extended: true }))
     
     // Consent GET
