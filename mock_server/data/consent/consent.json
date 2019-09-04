@@ -1,25 +1,23 @@
 {
-    "Payload": [
-        { 
-          "id": "885dbeb8-ef27-5e90-a525-a7179587d299",
-          "name": "NAB",
-          "description": "National Australia Bank",
-          "url": "https://www.nab.com.au",
-          "consentStatus": 0
-        },
-        { 
-            "id": "27d7070c-dd12-5087-a253-402b161d8a2c",
-            "name": "CBA",
-            "description": "Commonwealth Bank",
-            "url": "https://www.commbank.com.au",
-            "consentStatus": 0
-        },
-        { 
-            "id": "b05c0a2b-decb-5f11-8a00-7c1991ccec8d",
-            "name": "Westpac",
-            "description": "Westpac Banking Corporation",
-            "url": "https://www.westpac.com.au",
-            "consentStatus": 0
-        }
-    ] 
+    "885dbeb8-ef27-5e90-a525-a7179587d299": {
+        "id": "885dbeb8-ef27-5e90-a525-a7179587d299",
+        "name": "NAB",
+        "description": "National Australia Bank",
+        "url": "https://www.nab.com.au",
+        "consentStatus": 0
+    },
+    "27d7070c-dd12-5087-a253-402b161d8a2c": {
+        "id": "27d7070c-dd12-5087-a253-402b161d8a2c",
+        "name": "CBA",
+        "description": "Commonwealth Bank",
+        "url": "https://www.commbank.com.au",
+        "consentStatus": 0
+    },
+    "b05c0a2b-decb-5f11-8a00-7c1991ccec8d": {
+        "id": "b05c0a2b-decb-5f11-8a00-7c1991ccec8d",
+        "name": "Westpac",
+        "description": "Westpac Banking Corporation",
+        "url": "https://www.westpac.com.au",
+        "consentStatus": 0
+    }
 }

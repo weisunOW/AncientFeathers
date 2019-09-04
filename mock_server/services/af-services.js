@@ -9,5 +9,5 @@ let port = 5000
 app = express()
 app.use(cors())
 restApp.start(port, app).listen(port, () => {
-    util.log(colors.cyan(util.format("Payees Services started on port %d", port)))
+    util.log(colors.cyan(util.format("REST Services started on port %d", port)))
 })
