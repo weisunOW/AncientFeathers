@@ -19,7 +19,29 @@ function start(port, app) {
     app.use(bodyParser.json({ type: (req) => supportedContentType.includes(req.get('Content-Type')) }))
     app.use(bodyParser.urlencoded({ extended: true }))
     
-    // Consent GET
+    // Consent - reset all consent status - GET
+    app.get('/consent/resetAll', (req, res) => {
+        util.log(util.format("Handling %s %s", req.method, req.url))
+        res.setHeader('Content-Type', 'application/json')
+
+        readJSONFile(consentFilePath, (error, consent) => {
+            if (error) {
+                res.status(404).json({ "status": 404, "description": "Failed to load consent."})
+                return
+            }
+            Object.keys(consent).forEach((key) => { consent[key].consentStatus = 0 })
+            writeJSONToFile(consent, consentFilePath, (error) => {
+                if (error) {
+                    res.status(500).json({ "status": 500, "description": "Failed to update consent."})
+                    return
+                }
+                
+                res.status(200).json({ "status": "success" })
+            })
+        })
+    })
+
+    // Consent - GET
     app.get('/consent', (req, res) => {
         util.log(util.format("Handling %s %s", req.method, req.url))
         res.setHeader('Content-Type', 'application/json')
@@ -33,6 +55,7 @@ function start(port, app) {
         })
     })
     
+    // Consent POST
     app.post('/consent', (req, res) => {
         util.log(util.format("Handling %s %s", req.method, req.url))
         util.log(req.body)
@@ -63,7 +86,7 @@ function start(port, app) {
                     res.status(200).json({ "status": "success" })
                 })
             } else {
-                res.status(400).json({ "status": 404, "description": "Failed to load bank consent with id ${id}" })
+                res.status(400).json({ "status": 400, "description": "Failed to load bank consent with id ${id}" })
             }
         })
     })
