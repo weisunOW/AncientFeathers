@@ -1,0 +1,235 @@
+{
+	"info": {
+		"_postman_id": "8ebc7fb3-6e49-45cb-8859-145cb2582d88",
+		"name": "AncientFeathers Hackathon GCP demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Consent GET All",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost/consent",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"consent"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consent Approve NAB",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"885dbeb8-ef27-5e90-a525-a7179587d299\",\n    \"name\": \"NAB\",\n    \"description\": \"National Australia Bank\",\n    \"url\": \"https://www.nab.com.au\",\n    \"consentStatus\": 2\n}"
+				},
+				"url": {
+					"raw": "http://localhost/consent",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"consent"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consent Approve CBA",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"27d7070c-dd12-5087-a253-402b161d8a2c\",\n    \"name\": \"CBA\",\n    \"description\": \"Commonwealth Bank\",\n    \"url\": \"https://www.commbank.com.au\",\n    \"consentStatus\": 2\n}"
+				},
+				"url": {
+					"raw": "http://localhost/consent",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"consent"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Saved Payee List",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://35.244.122.182/payees",
+					"protocol": "http",
+					"host": [
+						"35",
+						"244",
+						"122",
+						"182"
+					],
+					"path": [
+						"payees"
+					]
+				},
+				"description": "GET Payees"
+			},
+			"response": []
+		},
+		{
+			"name": "Consent Reset All",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://35.244.122.182/consent/resetAll",
+					"protocol": "http",
+					"host": [
+						"35",
+						"244",
+						"122",
+						"182"
+					],
+					"path": [
+						"consent",
+						"resetAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Clear Payee List",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"TransferPayees\": []\n}"
+				},
+				"url": {
+					"raw": "http://35.244.122.182/payees",
+					"protocol": "http",
+					"host": [
+						"35",
+						"244",
+						"122",
+						"182"
+					],
+					"path": [
+						"payees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consent Approve Westpac",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"b05c0a2b-decb-5f11-8a00-7c1991ccec8d\",\n    \"name\": \"Westpac\",\n    \"description\": \"Westpac Banking Corporation\",\n    \"url\": \"https://www.westpac.com.au\",\n    \"consentStatus\": 2\n}"
+				},
+				"url": {
+					"raw": "http://35.244.122.182/consent",
+					"protocol": "http",
+					"host": [
+						"35",
+						"244",
+						"122",
+						"182"
+					],
+					"path": [
+						"consent"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
