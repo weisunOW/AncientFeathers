@@ -63,3 +63,66 @@ E.g.
 ```bash
 docker run -p 80:5000 -d ancient_feathers/mock_server
 ```
+
+## Deployment to GKE
+The containerized image could be deployed to GKE(google kubernete engine) given that a PROJECT has been created on GCP and a gke cluster has been created.
+
+
+### Build and push the docker image to Google Container Registry 
+Given that a GCP cloud shell has been running from the GKE cluster,
+Run below command to create and push docker image
+
+```bash
+docker build -t gcr.io/[PROJECT_ID]/af-server:[VERSION_NUM] .
+docker push gcr.io/[PROJECT_ID]/af-server:[VERSION_NUM]
+```
+Replace [PROJECT_ID] with the valid GCP Project ID, 
+replace [VERSION_NUM] with the version number of the app, 
+this number need to match the verison number in `deployment.yaml`
+
+### Deploy docker image to kubernets
+`deployment.yaml` describes containers to be deployed and will create a LoadBalancer to expose containers to the internet. 
+
+Run below in cloud shell to create deployment and service
+
+```bash
+kubectl apply -f deployment.yaml --record
+```
+
+Check deployment process
+
+```bash
+kubectl get deployments
+```
+
+Check pods
+
+```bash
+kubectl get pods
+```
+
+Check service and copy external IP address
+
+```bash
+kubectl get services
+```
+
+### Release a new version
+Push a new version of docker image to the Google Container Registry,
+change docker image version in deployment.yaml and then run below command
+
+```bash
+kubectl apply -f deployment.yaml --record
+```
+### Uesful tips
+Check container logs
+
+```bash
+kubectl logs <POD NAME>
+```
+
+Delete a whole deployment
+
+```bash
+kubectl delete deployment [DEPLOYMENT NAME]
+```
