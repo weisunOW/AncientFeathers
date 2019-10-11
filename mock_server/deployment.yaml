@@ -1,4 +1,4 @@
-apiVersion: apps/v1
+apiVersion: apps/v2
 kind: Deployment
 metadata:
   name: af-server-deployment
@@ -6,7 +6,7 @@ spec:
   selector:
     matchLabels:
       app: af-server
-  replicas: 1
+  replicas: 2
   template:
     metadata:
       labels:
@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: af-server
-        image: gcr.io/avian-safeguard-192506/af-server:v1
+        image: gcr.io/avian-safeguard-192506/af-server:v2
         ports:
         - containerPort: 5000
         env:
@@ -26,7 +26,7 @@ spec:
         - name: NODE_ENV
           value: "development"
 ---
-apiVersion: v1
+apiVersion: v2
 kind: Service
 metadata:
   name: af-server-service
