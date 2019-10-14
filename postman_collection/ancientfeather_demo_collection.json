@@ -25,10 +25,13 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://localhost/consent",
+					"raw": "http://35.189.32.202/consent",
 					"protocol": "http",
 					"host": [
-						"localhost"
+						"35",
+						"189",
+						"32",
+						"202"
 					],
 					"path": [
 						"consent"
@@ -54,10 +57,13 @@
 					"raw": "{\n    \"id\": \"885dbeb8-ef27-5e90-a525-a7179587d299\",\n    \"name\": \"NAB\",\n    \"description\": \"National Australia Bank\",\n    \"url\": \"https://www.nab.com.au\",\n    \"consentStatus\": 2\n}"
 				},
 				"url": {
-					"raw": "http://localhost/consent",
+					"raw": "http://35.189.32.202/consent",
 					"protocol": "http",
 					"host": [
-						"localhost"
+						"35",
+						"189",
+						"32",
+						"202"
 					],
 					"path": [
 						"consent"
@@ -83,10 +89,13 @@
 					"raw": "{\n    \"id\": \"27d7070c-dd12-5087-a253-402b161d8a2c\",\n    \"name\": \"CBA\",\n    \"description\": \"Commonwealth Bank\",\n    \"url\": \"https://www.commbank.com.au\",\n    \"consentStatus\": 2\n}"
 				},
 				"url": {
-					"raw": "http://localhost/consent",
+					"raw": "http://35.189.32.202/consent",
 					"protocol": "http",
 					"host": [
-						"localhost"
+						"35",
+						"189",
+						"32",
+						"202"
 					],
 					"path": [
 						"consent"
@@ -115,13 +124,13 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://35.244.122.182/payees",
+					"raw": "http://35.189.32.202/payees",
 					"protocol": "http",
 					"host": [
 						"35",
-						"244",
-						"122",
-						"182"
+						"189",
+						"32",
+						"202"
 					],
 					"path": [
 						"payees"
@@ -151,13 +160,13 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://35.244.122.182/consent/resetAll",
+					"raw": "http://35.189.32.202/consent/resetAll",
 					"protocol": "http",
 					"host": [
 						"35",
-						"244",
-						"122",
-						"182"
+						"189",
+						"32",
+						"202"
 					],
 					"path": [
 						"consent",
@@ -184,13 +193,13 @@
 					"raw": "{\n    \"TransferPayees\": []\n}"
 				},
 				"url": {
-					"raw": "http://35.244.122.182/payees",
+					"raw": "http://35.189.32.202/payees",
 					"protocol": "http",
 					"host": [
 						"35",
-						"244",
-						"122",
-						"182"
+						"189",
+						"32",
+						"202"
 					],
 					"path": [
 						"payees"
@@ -216,13 +225,13 @@
 					"raw": "{\n    \"id\": \"b05c0a2b-decb-5f11-8a00-7c1991ccec8d\",\n    \"name\": \"Westpac\",\n    \"description\": \"Westpac Banking Corporation\",\n    \"url\": \"https://www.westpac.com.au\",\n    \"consentStatus\": 2\n}"
 				},
 				"url": {
-					"raw": "http://35.244.122.182/consent",
+					"raw": "http://35.189.32.202/consent",
 					"protocol": "http",
 					"host": [
 						"35",
-						"244",
-						"122",
-						"182"
+						"189",
+						"32",
+						"202"
 					],
 					"path": [
 						"consent"
